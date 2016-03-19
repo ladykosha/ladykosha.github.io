@@ -36,3 +36,5 @@ gist:
 timezone: Russia/Moscow
 encoding: utf-8
 lsi: true
+exclude: [.dir-locals.el, .gitignore, README.md, .*~]
+comments: true
