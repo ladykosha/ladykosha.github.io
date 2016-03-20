@@ -25,16 +25,16 @@ kramdown:
 gems:
    - jekyll-coffeescript
    - jekyll-paginate
-lsi: true
+# Неизменяемое потому что github
+lsi: false
 safe: true
-# source: source
 incremental: false
 highlighter: rouge
 gist:
    noscript: false
-# destination: dest
+# Завершили неизменяемое
+excerpt_separator: <!--more-->   
 timezone: Russia/Moscow
 encoding: utf-8
-lsi: true
 exclude: [.dir-locals.el, .gitignore, README.md, .*~]
 comments: true
