@@ -33,8 +33,31 @@ highlighter: rouge
 gist:
    noscript: false
 # Завершили неизменяемое
-excerpt_separator: <!--more-->   
 timezone: Russia/Moscow
 encoding: utf-8
 exclude: [.dir-locals.el, .gitignore, README.md, .*~]
-comments: true
+future: false
+
+# Поумолчательные настройки
+defaults:
+  -
+    scope:
+      path: "" # Все файлы проекта
+    values:
+      googlestat: true
+      excerpt_separator: "<!-- more -->"
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      comments: true
+      tags: blog
+  -
+    scope:
+      path: "pages"
+      type: "pages"
+    values:
+      comments: true
+      tags: pages
+      layout: default

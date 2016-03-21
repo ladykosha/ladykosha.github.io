@@ -3,8 +3,22 @@ layout: default
 ---
 
 <div class="home">
+    <div class="epigraph" style="font-size:small; padding-left:50%; margin:0px">
+	<p style="margin:0px">Нередко мы считаем свои заблуждения как раз находками, почему же ими не поделиться?..</p>
+	<p class="epigraf-author" style="font-size:x-small; text-align:right; font-style:italic; margin:0px"><a href="https://www.facebook.com/krotovv/posts/1268373529844013">Виктор Кротов</a></p>
+    </div>
 
-  <h1 class="page-heading">Блог</h1>
+    <h1 class="page-heading">Страницы</h1>
+  <ul>
+      {% for my_page in site.pages %}
+          {% if my_page.title %}
+              <li><a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a></li>
+          {% endif %}
+        {% endfor %}
+  </ul>
+
+   
+<h1 class="page-heading">Блог</h1>
 
   <ul class="post-list">
     {% for post in site.posts %}
@@ -14,10 +28,11 @@ layout: default
         <h2>
           <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         </h2>
+	{{ post.excerpt }}<a class="exerp" href="{{ post.url }}">Читать дальше</a>
       </li>
     {% endfor %}
   </ul>
 
-<!--  <p class="rss-subscribe">Подписаться <a href="{{ "/feed.xml" | prepend: site.baseurl }}">на RSS</a></p> -->
+<!--  <p class="rss-subscribe">Подписаться <a href="{{ "/feed.xml" }}">на RSS</a></p> -->
 
 </div>
