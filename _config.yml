@@ -53,6 +53,7 @@ defaults:
     values:
       comments: true
       tags: blog
+      layout: post
   -
     scope:
       path: "pages"
@@ -60,4 +61,4 @@ defaults:
     values:
       comments: true
       tags: pages
-      layout: default
+      layout: article
