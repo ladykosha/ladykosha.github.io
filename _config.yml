@@ -61,4 +61,4 @@ defaults:
     values:
       comments: true
       tags: pages
-      layout: article
+      layout: page

@@ -1,5 +1,6 @@
 ---
-title: Notmuch - чудесная почта в Emacs
+layout: page
+title: "Notmuch - чудесная почта в Emacs"
 ---
 
 # Notmuch - чудесная почта в Emacs {#notmuch}
