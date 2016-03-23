@@ -33,10 +33,11 @@ highlighter: rouge
 gist:
    noscript: false
 # Завершили неизменяемое
-timezone: Russia/Moscow
+timezone: Europe/Moscow
 encoding: utf-8
 exclude: [.dir-locals.el, .gitignore, README.md, .*~]
 future: false
+paginate: 10
 
 # Поумолчательные настройки
 defaults:
@@ -62,3 +63,12 @@ defaults:
       comments: true
       tags: pages
       layout: page
+  -
+    scope:
+      path: "linklists"
+      type: "pages"
+    values:
+      comments: true
+      tags: pages
+      layout: page
+      category: linklist
