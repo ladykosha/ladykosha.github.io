@@ -120,7 +120,7 @@ Replace the second element of the list with “make -C build/digital” if you w
 
 -   https://github.com/madsdk/yasnippets-latex/tree/master/snippets
 
--   Руководство по emacs &lt;http://ergoemacs.org/emacs/emacs.html&gt;
+-   Руководство по emacs http://ergoemacs.org/emacs/emacs.html
 
 -   Практический emacs-lisp http://ergoemacs.org/emacs/elisp.html и прочее на http://ergoemacs.org/index.html тоже занятное есть.
 
