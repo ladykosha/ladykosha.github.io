@@ -3,7 +3,7 @@ layout: post
 title:  "Бонсай и кинцуги"
 date:   2016-03-26 00:11:17 +0300
 categories: blog
-tags: [japan, thoughts]
+tags: [japan, thoughts, words]
 ---
 
 Недодуманное, скорее ощущение. Просто хотелось сказать.
