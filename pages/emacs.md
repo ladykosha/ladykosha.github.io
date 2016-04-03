@@ -8,8 +8,43 @@ tags: ["emacs", "computer"]
 
 <!-- more -->
 
-Словарь синонимов
------------------
+Пакеты и прочие расширения
+--------------------------
+
+### diminish
+
+Оччень полезная штука. Позволяет убрать minor-моды из modeline, или заменить текст на свой. На прочую работу мода не влияет.
+
+        (require 'diminish)
+        (diminish 'anzu-mode)
+        (diminish 'abbrev-mode)
+
+И что там ещё неинтересно видеть.
+
+Вариант с заменой текста:
+
+        (diminish 'abbrev-mode "Abv")
+
+### package-safe-delete
+
+Прекрасная штука для меня - проверяет зависимости, прежде, чем удалять. Теперь стало возможно разгребать натащенное, не боясь всё попортить.
+
+    M-x package-safe-delete<RET>package-name<RET>
+
+### wtf
+
+    ;;; wtf.el --- Look up conversational and computing acronyms
+
+    ;; Copyright (C) 2005, 2006, 2007 Michael Olson
+
+    ;; Author: Michael Olson <mwolson@gnu.org>
+    ;; Date: Wed 16-May-2007
+    ;; Version: 2.0
+    ;; URL: http://mwolson.org/static/dist/elisp/wtf.el
+
+Для смотрения популярных акронимов (аббревиатуры, которые произносятся слитно). Содержит длинный список таковых, умеет добавлять новые (в раздел customize файла init.el, видимо), умеет удалять (добавленные) или помечать удалёнными (те, что из исходного набора).
+
+### Словарь синонимов
 
 <https://www.emacswiki.org/emacs/synonyms.el>
 
@@ -26,7 +61,7 @@ tags: ["emacs", "computer"]
 Способ быстро сгребать интересное из браузера. Emacs, org-mode, firefox.
 ------------------------------------------------------------------------
 
-Cохраняю сразу в файл ссылку, тайтл страницы, текст страницы и дату добавления.
+Фича - сохраняю сразу в файл ссылку, тайтл страницы, текст страницы и дату добавления.
 
 Это в настроечном файл должно быть сразу. `(server-start)` чтобы можно было подключаться через emacsclient. У меня было и раньше, ибо удобно. `(add-to-list ’load-path ~/path/to/org-protocol/)` - поищите, `(require ’org-protocol)` - возможно, это заменяется на настройку переменной org-modules. Надо проверить наличие соответствующего файла и выше поставить `(add-to-list ’load-path /path/to/folder)`, не факт, что оно подхватывается автоматом. У меня лично из-за этого не грузилось.
 
@@ -49,11 +84,11 @@ l после `org-protocol://capture://` - это буква используе�
 How to copy from one dired dir to the next dired dir shown in a split window?
 -----------------------------------------------------------------------------
 
-Call “customize-variable” then “dired-dwim-target”, then set the value to “On” by clicking the `Toggle` button. Then, click `Save for Future Sessions`, then `Finish`.
+Call “customize-variable” then “dired-dwim-target”, then set the value to “On” by clicking the 〖Toggle〗 button. Then, click 〖Save for Future Sessions〗, then 〖Finish〗.
 
 Or, put the following in your emacs init file:
 
-    (setq dired-dwim-target t)
+(setq dired-dwim-target t)
 
 Now, when you have dired of different dir in 2 panes, and when you press C to copy, the other dir in the split pane will be default destination.
 
@@ -76,7 +111,7 @@ If you want Enter and (parent dir) to use the same buffer, put the following in 
 In a file, how to go to its directory?
 --------------------------------------
 
-Use the command “dired-jump” `Ctrl+x Ctrl+j`.
+Use the command “dired-jump” 【Ctrl+x Ctrl+j】.
 
 Добавить команду в меню auctex?
 -------------------------------
@@ -89,6 +124,8 @@ Replace the second element of the list with “make -C build/digital” if you w
 
 Ссылки
 ------
+
+-   https://github.com/jwiegley/use-package - очень, очень полезная штука для работы с пакетами emacs.
 
 -   punchagan/org2blog - GitHub <https://github.com/punchagan/org2blog> \[2011-03-31 Чтв 08:37\]
 
@@ -120,7 +157,7 @@ Replace the second element of the list with “make -C build/digital” if you w
 
 -   https://github.com/madsdk/yasnippets-latex/tree/master/snippets
 
--   Руководство по emacs http://ergoemacs.org/emacs/emacs.html
+-   Руководство по emacs &lt;http://ergoemacs.org/emacs/emacs.html&gt;
 
 -   Практический emacs-lisp http://ergoemacs.org/emacs/elisp.html и прочее на http://ergoemacs.org/index.html тоже занятное есть.
 
@@ -128,4 +165,4 @@ Replace the second element of the list with “make -C build/digital” if you w
 
 -   https://github.com/wuliang/MyEmacsConfig/blob/master/wl.el - что-то мне тут казалось занятным.
 
-
+-   https://github.com/dimitri/el-get - el-get, более развесистый менеджер пакетов, использующий package.el как один из методов.
