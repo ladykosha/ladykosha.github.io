@@ -8,10 +8,21 @@ tags: ["emacs", "computer"]
 
 <!-- more -->
 
-Пакеты и прочие расширения
+-   [Пакеты и прочие расширения](#packages)
+	-   [diminish](#diminish)
+	-   [package-safe-delete](#package-safe-delete)
+	-   [wtf](#package-wtf)
+	-   [Словарь синонимов](#package-synonyms)
+-   [Способ быстро сгребать интересное из браузера. Emacs, org-mode, firefox.](#org-protocol-capture-browser)
+-   [Ссылки](#emacs-links)
+
+
+Пакеты и прочие расширения {#packages}
 --------------------------
 
 ### diminish
+
+<https://github.com/myrjola/diminish.el>. Есть в Melpa.
 
 Оччень полезная штука. Позволяет убрать minor-моды из modeline, или заменить текст на свой. На прочую работу мода не влияет.
 
@@ -27,11 +38,13 @@ tags: ["emacs", "computer"]
 
 ### package-safe-delete
 
+<https://github.com/Fanael/package-safe-delete>. Есть в Melpa.
+
 Прекрасная штука для меня - проверяет зависимости, прежде, чем удалять. Теперь стало возможно разгребать натащенное, не боясь всё попортить.
 
     M-x package-safe-delete<RET>package-name<RET>
 
-### wtf
+### wtf {#package-wtf}
 
     ;;; wtf.el --- Look up conversational and computing acronyms
 
@@ -44,28 +57,28 @@ tags: ["emacs", "computer"]
 
 Для смотрения популярных акронимов (аббревиатуры, которые произносятся слитно). Содержит длинный список таковых, умеет добавлять новые (в раздел customize файла init.el, видимо), умеет удалять (добавленные) или помечать удалёнными (те, что из исходного набора).
 
-### Словарь синонимов
+### Словарь синонимов {#package-synonyms}
 
 <https://www.emacswiki.org/emacs/synonyms.el>
 
 Требует наличия словаря синонимов `mthesaur.txt` в папке. Словарь устроен очень просто: первое слово - название статьи, далее перечислены «синонимы». В общем-то без разницы, синонимы ли они, достаточно, что они в этой строке.
 
-Может искать простые регулярные выражения.
+Можно использовать простые регулярные выражения.
 
-‘C-u’ - Search for additional synonyms, in two senses. Return also synonyms that are matched partially by the input. Search the entire thesaurus for input matches, even if the input matches a thesaurus entry.
+‘C-u’ - Ищет ещё синонимы. Во-первых, к тому, что только частично совпадает с введённым. Во-вторых, ищет строки с совпадениями в любом месте, а не только с первым словом.
 
-‘M–’ - Append the search results to any previous search results, in buffer \*Synonyms\*. (Normally, the new results replace any previous results.)
+‘M–’ - Добавляет результаты поиска к тем, которые уже есть в буфере синонимов (обычно - заменяет)
 
-‘C-u C-u’ - ‘C-u’ plus ‘M–’: Search more and append results.
+‘C-u C-u’ - ‘C-u’ plus ‘M–’: Искать дополнительные результаты, дописать.
 
-Способ быстро сгребать интересное из браузера. Emacs, org-mode, firefox.
+Способ быстро сгребать интересное из браузера. Emacs, org-mode, firefox. {#org-protocol-capture-browser}
 ------------------------------------------------------------------------
 
 Фича - сохраняю сразу в файл ссылку, тайтл страницы, текст страницы и дату добавления.
 
-Это в настроечном файл должно быть сразу. `(server-start)` чтобы можно было подключаться через emacsclient. У меня было и раньше, ибо удобно. `(add-to-list ’load-path ~/path/to/org-protocol/)` - поищите, `(require ’org-protocol)` - возможно, это заменяется на настройку переменной org-modules. Надо проверить наличие соответствующего файла и выше поставить `(add-to-list ’load-path /path/to/folder)`, не факт, что оно подхватывается автоматом. У меня лично из-за этого не грузилось.
+Это в настроечном файл должно быть сразу. `(server-start)` чтобы можно было подключаться через `emacsclient`. У меня было и раньше, ибо удобно. `(add-to-list ’load-path ~/path/to/org-protocol/)` - поищите, `(require ’org-protocol)` - возможно, это заменяется на настройку переменной org-modules. Надо проверить наличие соответствующего файла и выше поставить `(add-to-list ’load-path /path/to/folder)`, не факт, что оно подхватывается автоматом. У меня лично из-за этого не грузилось.
 
-Это в закладку. Да, джаваскрипт.
+Это в закладку. Да, джаваскрипт. Я их не люблю, но этот полезный.
 
     javascript:location.href='org-protocol://capture://l/'\sout{encodeURIComponent(location.href)}'/'\sout{encodeURIComponent(document.title)}'/'+encodeURIComponent(window.getSelection())
 
@@ -81,48 +94,7 @@ l после `org-protocol://capture://` - это буква используе�
 
 Руководство на английском - тут. <http://orgmode.org/worg/org-contrib/org-protocol.html>
 
-How to copy from one dired dir to the next dired dir shown in a split window?
------------------------------------------------------------------------------
-
-Call “customize-variable” then “dired-dwim-target”, then set the value to “On” by clicking the 〖Toggle〗 button. Then, click 〖Save for Future Sessions〗, then 〖Finish〗.
-
-Or, put the following in your emacs init file:
-
-(setq dired-dwim-target t)
-
-Now, when you have dired of different dir in 2 panes, and when you press C to copy, the other dir in the split pane will be default destination.
-
-How to make dired use the same buffer for viewing directory, instead of spawning many?
---------------------------------------------------------------------------------------
-
-In dired, you can press a instead of Enter to open the dir. This way, the previous dir will be automatically closed.
-
-If you want Enter and (parent dir) to use the same buffer, put the following in your emacs init file:
-
-    (add-hook 'dired-mode-hook
-     (lambda ()
-      (define-key dired-mode-map (kbd "<return>")
-        'dired-find-alternate-file) ; was dired-advertised-find-file
-      (define-key dired-mode-map (kbd "^")
-        (lambda () (interactive) (find-alternate-file "..")))
-      ; was dired-up-directory
-     ))
-
-In a file, how to go to its directory?
---------------------------------------
-
-Use the command “dired-jump” 【Ctrl+x Ctrl+j】.
-
-Добавить команду в меню auctex?
--------------------------------
-
-Add the following code to your init file:
-
-(add-to-list ’TeX-command-list ’(“Make” “make” TeX-run-compile nil t)) Then you’ll be able to call the make program with C-c C-c Make RET.
-
-Replace the second element of the list with “make -C build/digital” if you want “make -C build/digital” by default, and the fourth element to t instead of nil if you want to have the chance to modify the make command instead of sticking with the default (which you can change interactively with C-u C-c C-c anyway). \[2015-12-09 Wed 05:03\]
-
-Ссылки
+Ссылки {#emacs-links}
 ------
 
 -   https://github.com/jwiegley/use-package - очень, очень полезная штука для работы с пакетами emacs.
