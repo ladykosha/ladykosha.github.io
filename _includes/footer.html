@@ -1,11 +1,12 @@
 <footer class="site-footer">
 
-  <div class="wrapper" style="text-align:center">
-
+  <div class="wrapper">
           {% if site.github_username %}
             {% include icon-github.html username=site.github_username %}
           {% endif %}
-<br><span style="font-size:x-small">Last updated: {{ site.time }}</span>
+	  <p class="footer">Last updated: {{ site.time }}<br>
+	      Подписаться <a href="{{ "/feed.xml" }}">на RSS</a>
+	  </p>
   </div>
 
 </footer>

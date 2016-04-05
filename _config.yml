@@ -39,6 +39,9 @@ exclude: [.dir-locals.el, .gitignore, README.md, .*~]
 future: false
 paginate: 10
 
+sass:
+  style: compact
+  sass_dir: _sass
 # Поумолчательные настройки
 defaults:
   -
