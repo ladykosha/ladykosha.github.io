@@ -10,8 +10,9 @@ layout: default
 	<p class="epigraph-author">Дисклеймер</p>
     </div>
 
+<h1 class="page-heading"><a class="page-link" href="blog.html">Блог</a></h1>
 <h1 class="page-heading">Страницы</h1>
-  <ul>
+<ul>
       {% for my_page in site.pages %}
           {% if my_page.title %}
               <li><a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a></li>
@@ -19,19 +20,3 @@ layout: default
         {% endfor %}
   </ul>
 
-   
-<h1 class="page-heading">Блог</h1>
-
-  <ul class="post-list">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-	{{ post.excerpt }}<a class="exerp" href="{{ post.url }}">Читать дальше</a>
-      </li>
-    {% endfor %}
-  </ul>
-</div>
