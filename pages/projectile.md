@@ -1,5 +1,6 @@
 ---
 title: 'Projectile, perspective, nameframe'
+tags: emacs
 ---
 
 -   <https://github.com/bbatsov/projectile> — основное, о чём я тут.
