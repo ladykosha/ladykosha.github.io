@@ -15,3 +15,4 @@ tags: links
 - https://vk.com/foodsharing_msk - фудшеринг в Москве. Прикольный проект про делёжку едой.
 - http://rusbase.com/opinion/science-is-popular/ - о работе популяризатора науки
 - http://www.go-up.ru/article/uvlech/46/ Гиппенрейтер - кувшин эмоций
+
