@@ -1,6 +1,7 @@
 ---
 title: "Rdiff-backup"
 layout: page
+tags: computer
 ---
 
 Лирика на тему

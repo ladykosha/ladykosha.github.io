@@ -1,6 +1,10 @@
 ---
 layout: default
 ---
+  <div class="prevnext">
+    <a href="{{ page.previous.url }}">{{ page.previous.title }}</a> | <a href="{{ page.next.url }}">{{ page.next.title }}</a>
+  </div>
+
 <article class="post">
 
   <header class="post-header">
@@ -10,5 +14,8 @@ layout: default
   <div class="post-content">
     {{ content }}
   </div>
-
+  
 </article>
+  <div class="prevnext">
+    <a href="{{ page.previous.url }}">{{ page.previous.title }}</a> | <a href="{{ page.next.url }}">{{ page.next.title }}</a>
+  </div>
