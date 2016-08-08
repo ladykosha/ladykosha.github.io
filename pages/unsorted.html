@@ -1,0 +1,151 @@
+---
+title: Разное околокомпьютерное
+---
+
+
+<div id="TOC">
+<ul>
+<li><a href="#sass">Sass</a></li>
+<li><a href="#ux447ux435ux43c-ux43cux43dux435-ux43dux440ux430-ux43bux438ux43dux443ux445">Чем мне нра линух</a></li>
+<li><a href="#qrencode---ux441ux43eux437ux434ux430ux442ux44c-qr-ux43aux43eux434-ux438ux437-ux43aux43eux43cux430ux43dux434ux43dux43eux439-ux441ux442ux440ux43eux43aux438">qrencode - создать qr-код из командной строки</a></li>
+<li><a href="#перенос-ссылки-без-порчи-её">Перенос ссылки без порчи её</a></li>
+<li><a href="#ux43fux440ux43e-fstab">Про fstab</a></li>
+<li><a href="#подключение-второго-монитора">Подключение второго монитора</a></li>
+<li><a href="#easytag">easytag</a></li>
+<li><a href="#release-просрочен">Release просрочен</a></li>
+<li><a href="#корзина">Корзина</a></li>
+<li><a href="#apache">apache</a></li>
+<li><a href="#gitweb">Gitweb</a></li>
+<li><a href="#настроить-тачпад-чтоб-реагировал-на-нажатие">Настроить тачпад, чтоб реагировал на нажатие</a></li>
+<li><a href="#ux43aux43bux430ux432ux438ux430ux442ux443ux440ux430">клавиатура</a></li>
+<li><a href="#заблокировать-пользователя-не-удаляя-из-системы">Заблокировать пользователя, не удаляя из системы</a></li>
+<li><a href="#djvu">Djvu</a><ul>
+<li><a href="#шифруем-расшифровываем">Шифруем-расшифровываем</a></li>
+</ul></li>
+</ul>
+</div>
+
+<h2 id="sass">Sass</h2>
+<p><a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html" class="uri">http://sass-lang.com/documentation/file.SASS_REFERENCE.html</a></p>
+<p>Sass: Syntactically Awesome Style Sheets http://sass-lang.com/ 2016-03-21 Пн 06:52</p>
+<p>Sass: Документация на русском языке http://sass-scss.ru/ 2016-03-21 Пн 06:52</p>
+<h2 id="ux447ux435ux43c-ux43cux43dux435-ux43dux440ux430-ux43bux438ux43dux443ux445">Чем мне нра линух</h2>
+<ul>
+<li><p>Никто меня не ограничивает. Только я сама - насколько мне хочется в чём-то разобраться. Система под названием “Можно”. На самом начальном уровне можно не знать, кажется, вообще ничего. И ничо, жить можно. Если есть любопытство - так она скоро родной будет :)</p></li>
+<li><p>Практически всё можно автоматизировать. Когда начинаешь выполнять какие-то повторяющиеся действия, уже автоматом начинаешь прикидывать, как это можно передать компу для автоматического выполнения. Мне уже страшно представить, как у меня знакомые то теги в десятки песен вставляют поштучно, то сотням картинок вручную размеры меняют… бррр! Даже если у меня процесс в первый раз займёт столько же времени - это будет не тупая одноообразная работа, а интересное обучение новому.</p></li>
+<li><p>Нет чёткой границы между тем, что уже система, и тем, что я сама приделала. Плавный переход к участию в создании.</p></li>
+<li><p>Очень многие проблемы уже кто-то решал, и если поискать, можно найти, как. Есть традиция вывешивать описания решений в сети.</p></li>
+<li><p>Использовать linux - это честно и правильно. Никто за это упрекнуть не вправе. :)</p></li>
+</ul>
+<h2 id="qrencode---ux441ux43eux437ux434ux430ux442ux44c-qr-ux43aux43eux434-ux438ux437-ux43aux43eux43cux430ux43dux434ux43dux43eux439-ux441ux442ux440ux43eux43aux438">qrencode - создать qr-код из командной строки</h2>
+<p>Команда имеет следующий синтаксис:</p>
+<pre><code>qrencode -o [filename.png] '[text/url/information to encode]'</code></pre>
+<p>Например, для того, чтобы сделать код со ссылкой на домашнюю страницу Google и сохранить его в файле google.png, необходимо ввести следующую команду:</p>
+<pre><code>qrencode -o google.png 'http://google.com'</code></pre>
+<h2 id="перенос-ссылки-без-порчи-её">Перенос ссылки без порчи её</h2>
+<p>Решение описано здесь <a href="http://www.alistapart.com/articles/the-look-that-says-book/" class="uri">http://www.alistapart.com/articles/the-look-that-says-book/</a>, и состоит в использовании ZERO WIDTH SPACE (ZWS). В Emacs вставляется так: C-x 8 RET и далее набираем 200b или ZERO WIDTH SPACE. Если интересует только HTML, то в месте разрыва длинного URL вставляем тот же ZWS как <code>&amp;​#​8203</code>​; Несмотря на разрыв в строке, ссылка остаётся правильной.</p>
+<p>via <a href="http://mydebianblog.blogspot.com/2012/09/markdown.html?showComment=1348524961037#c5487133048722305293" class="uri">http://mydebianblog.blogspot.com/2012/09/markdown.html?showComment=1348524961037#c5487133048722305293</a></p>
+<h2 id="ux43fux440ux43e-fstab">Про fstab</h2>
+<p>Памятка себе некоторой давности.</p>
+<p>Файл /etc/fstab содержит информацию о файловых системах для команды mount(1). Строки файла /etc/fstab содержат следующие поля:</p>
+<ol>
+<li><p>Устройство, которое должно быть подмонтировано (UUID или адрес вроде sdb1, hda1).</p></li>
+<li><p>Каталог, в который монтируется файловая система.</p></li>
+<li><p>Тип файловой системы (например: vfat - FAT32, ext2 - правильно, ext2. Вообще типы смотреть в мане mount).</p></li>
+<li><p>Опции, показывающие как эта файловая система будет обрабатываться. Например:</p>
+<ul>
+<li><p>“default” - означает, что они монтируются автоматически, доступны для чтения и записи с асинхронным I/O (вводом/выводом);</p></li>
+<li><p>r - монтировать с доступом только на чтение;</p></li>
+</ul></li>
+<li><p>Флаги, относящиеся к файловой системе. Первая цифра, 0 или 1, показывает, должна ли система копироваться при помощи команды dump (это нужно для системных резервных копий). Вторая цифра может быть 0, 1 или 2, она показывает порядок, в котором файловая система должна быть проверена при загрузке.</p>
+<ul>
+<li><p>0 – не должна проверяться вовсе.</p></li>
+<li><p>1 – должна проверяться первой и использоваться как корневая (/).</p></li>
+<li><p>Для всех остальных систем ставится 2</p></li>
+</ul></li>
+</ol>
+<p>Поля отделяются друг от друга пробелами. Строки, начинающиеся с символа #, являются комментариями. Пустые строки игнорируются. Пример строки:</p>
+<pre><code>  # /dev/sda1
+  UUID=9877-489A    /media/sda1     vfat     defaults,utf8,umask=007,gid=46     0 0</code></pre>
+<p>Чтобы узнать UUID - <code>ls -l /dev/disk/by-uuid</code></p>
+<h2 id="подключение-второго-монитора">Подключение второго монитора</h2>
+<p>Ещё памятка себе. –mode скорее всего уже не подходит.</p>
+<pre><code>$ xrandr --output VGA1 --mode 1280x1024 --right-of VGA0
+$ xrandr --output VGA1 --off</code></pre>
+<p>Есть гуи, они содержат в названии randr.</p>
+<p>Наиболее удобный на момент - <code>arandr</code>. После того, как подключен, активирован и размещён второй монитор, надо рестартить <code>fvwm</code> (мой windows manager). После этого он знает, как разворачивать на полный экран приложение, и всё такое.</p>
+<h2 id="easytag">easytag</h2>
+<p>EasyTAG — это графический редактор тегов с открытым исходным кодом, распространяющийся под GNU General Public License. Редактор тегов разработан Джеромом Кудерком на языке Си с использованием GTK+ и id3lib для поддержки графики и обработки ID3. Хорошая, в общем, штука.</p>
+<p>Так вот, обнаружена особенность: чтобы easytag мог работать с файлами на samba-шаре, шару очень желательно монтировать с опцией noserverino.</p>
+<h2 id="release-просрочен">Release просрочен</h2>
+<p>Если вдруг при попытке обновить сведения о пакетах в репозиториях дебиана вылезло сообщение вроде “E: Файл Release просрочен, игнорируется”, тогда…</p>
+<p>Чтобы это дело проигнорировать и всё же обновиться, надо выполнить команду:</p>
+<pre><code>    aptitude -o 'Acquire::Check-Valid-Until=false' update</code></pre>
+<p>Но лучше сначала проверить дату на своём компе. )</p>
+<h2 id="корзина">Корзина</h2>
+<p>Корзина - просто папка. И лежит она в ~/.local/share/Trash/. Точнее, это 2 папки: ~/.local/share/Trash/files и ~/.local/share/Trash/info – с данными и информацией о них, необходимой для восстановления.</p>
+<p>Можно очистить обе папки, чтобы очистить корзину, или зайти в ~/.local/share/Trash/files, чтобы восстановить удалённые файлы и папки.</p>
+<h2 id="apache">apache</h2>
+<ul>
+<li><p>Чтобы добавить модуль из mods-avaliable, нужно сказать a2enmod. Чтобы сделать неактивным - a2dismod.</p></li>
+<li><p>Чтобы добавить сайт из sites-avaliable, нужно сказать a2ensite. Чтобы сделать неактивным - a2dissite.</p></li>
+<li><p>Сайтики отдельных пользователей удобно добавлять путём создания симлинков в /var/www/ на их домашние папки - ребёнкова вики была такова.</p></li>
+<li><p>То, что мне нужно - обычно Про CGI http://localhost/doc/apache2-doc/manual/en/howto/cgi.html или Про виртуальные хосты.http://localhost/doc/apache2-doc/manual/en/vhosts/index.html</p></li>
+<li><p>Идея делать подпапку существующего сайта отдельным сайтом - глупая идея.</p></li>
+</ul>
+<h2 id="gitweb">Gitweb</h2>
+<p>мягкие ссылки на проекты должны лежать в <code>/var/lib/git</code>.</p>
+<h2 id="настроить-тачпад-чтоб-реагировал-на-нажатие">Настроить тачпад, чтоб реагировал на нажатие</h2>
+<p>Поначалу стрёмно было. Мыша шевелится, а нажиматься - не нажимается. <code>/usr/share/X11/xorg.conf.d/50-synaptics.conf</code> - настроечный файл.</p>
+<p>Добавила</p>
+<pre><code>Option  &quot;TapButton1&quot;    &quot;1&quot;
+Option  &quot;TapButton2&quot;    &quot;2&quot;
+Option  &quot;TapButton3&quot;    &quot;3&quot;
+Option  &quot;ClickFinger1&quot;  &quot;1&quot;
+Option  &quot;ClickFinger2&quot;  &quot;2&quot;
+Option  &quot;ClickFinger3&quot;  &quot;3&quot;</code></pre>
+<p>после чего тачпад исправно начал работать за трёхкнопочную мышь.</p>
+<p>Остальные возможные настройки берутся из вывода команды <code>synclient -l</code>. Теоретически можно настраивать хитрые скроллинги, реакцию на касание в углах…</p>
+<pre><code>    Option          &quot;VertTwoFingerScroll&quot;   &quot;1&quot;     # multitouch
+    Option          &quot;HorizTwoFingerScroll&quot;  &quot;1&quot;     # multitouch
+    Option          &quot;LBCornerButton&quot;        &quot;8&quot;     # browser &quot;back&quot; btn
+    Option          &quot;RBCornerButton&quot;        &quot;9&quot;     # browser &quot;forward&quot; btn</code></pre>
+<p>И т.п. (примеры из дебианской вики <a href="http://wiki.debian.org/SynapticsTouchpad" class="uri">http://wiki.debian.org/SynapticsTouchpad</a>)</p>
+<p>И положить это в <code>/etc/X11/xorg.conf.d/что-нибудь.conf</code> Вообще, если зачем-то в <code>xorg.conf.d</code> понадобилось лезть - копировать нужный файл в соотв. подпапку <code>/etc</code> и править уже там.</p>
+<h2 id="ux43aux43bux430ux432ux438ux430ux442ux443ux440ux430">клавиатура</h2>
+<p>настройки в /etc/default/keyboard</p>
+<pre><code>XKBMODEL=&quot;pc105&quot;
+XKBLAYOUT=&quot;us,ru&quot;
+XKBVARIANT=&quot;,&quot;
+XKBOPTIONS=&quot;grp:caps_toggle,compose:lwin,grp_led:scroll&quot;
+BACKSPACE=&quot;guess&quot;</code></pre>
+<h2 id="заблокировать-пользователя-не-удаляя-из-системы">Заблокировать пользователя, не удаляя из системы</h2>
+<pre><code>passwd -l username</code></pre>
+<p>или</p>
+<pre><code>passwd -u username </code></pre>
+<p>См. ман по поводу подробностей.</p>
+<h2 id="djvu">Djvu</h2>
+<p>Для работы с djvu есть прекрасная штука - DjVuLibre. В дебиане - пакет djvulibre-bin. В его состав входит djvmcvt, которая как раз и нужна, чтоб делать из indirect djvu - bundled djvu, и наоборот.</p>
+<p><strong>Сделать многостраничный “связанный” из “непрямого”</strong></p>
+<p><code>djvmcvt -b docin.djvu docout.djvu</code></p>
+<p>- docin.djvu здесь - тот самый индексный файл, который позволяет смотреть конвертируемый djvu как единую книгу.</p>
+<p>- docout.djvu - результат.</p>
+<p><strong>Сделать “непрямой” из обычного “связанного” многостраничного</strong></p>
+<p><code>djvmcvt -i docin.djvu dir index.djvu</code></p>
+<p>- docin.djvu здесь - многостраничный bundled djvu, который мы хотим сконвертировать</p>
+<p>- index.djvu - имя будущего индексного файла, который позволит смотреть всё как книгу.</p>
+<p>- dir - каталог, куда класть страницы indirect-ного djvu.</p>
+<p>А этого на вилинухе нет. Это я поворачивала страницы.</p>
+<pre><code>for i in *.tiff; do
+convert $i -rotate 90 &quot;./rotated/$i&quot;
+didjvu encode  -o &quot;./rotated/$i.djvu&quot;  &quot;./rotated/$i&quot;
+done</code></pre>
+<p>Потом из готовых отдельных:</p>
+<pre><code>djvm -c doc.djvu *.tiff.djvu</code></pre>
+<p>Вставить в готовый файл пропущенную страницу 143:</p>
+<pre><code>djvm -i doc.djvu 00167.djvu 143</code></pre>
+<h3 id="шифруем-расшифровываем">Шифруем-расшифровываем</h3>
+<pre><code>echo TEXT| openssl enc -e -aes256 -out fileCrypted</code></pre>
+<p>Расшифровываем:</p>
+<pre><code>openssl enc -d -aes256 -in fileCrypted</code></pre>
+<p>Источник: <a href="www.commandlinefu.com/commands/view/11584/encrypted-archive-with-openssl-and-tar" class="uri">www.commandlinefu.com/commands/view/11584/encrypted-archive-with-openssl-and-tar</a></p>
