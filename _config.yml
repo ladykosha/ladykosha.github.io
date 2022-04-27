@@ -22,7 +22,7 @@ markdown: kramdown
 kramdown:
    input: GFM
    hard_wrap: false
-gems:
+plugins:
    - jekyll-coffeescript
    - jekyll-paginate
 # Неизменяемое потому что github
@@ -38,7 +38,7 @@ timezone: Europe/Moscow
 encoding: utf-8
 exclude: [.dir-locals.el, .gitignore, README.md, .*~]
 future: false
-paginate: 10
+# paginate: 10
 
 # Поумолчательные настройки
 defaults:
