@@ -32,7 +32,8 @@ incremental: false
 highlighter: rouge
 gist:
    noscript: false
-remote_theme: Jekyll-Garden/jekyll-garden.github.io   
+remote_theme: raghudotcc/simply-jekyll
+              # Jekyll-Garden/jekyll-garden.github.io   
 # Завершили неизменяемое
 timezone: Europe/Moscow
 encoding: utf-8
