@@ -57,3 +57,5 @@ defaults:
       comments: false
       tags: pages
       layout: page
+
+theme: jekyll-theme-tactile
